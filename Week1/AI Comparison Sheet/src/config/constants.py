@@ -6,7 +6,7 @@ from typing import Final
 
 # API Endpoints
 GEMINI_API_BASE_URL: Final[str] = "https://generativelanguage.googleapis.com/v1/models"
-GEMINI_MODEL_ID: Final[str] = "gemini-2.0-flash"
+GEMINI_MODEL_ID: Final[str] = "gemini-2.5-flash"
 OLLAMA_DEFAULT_BASE_URL: Final[str] = "http://localhost:11434"
 OLLAMA_MODEL_ID: Final[str] = "deepseek-coder:latest"
 

@@ -17,6 +17,7 @@ from src.config import ConfigurationManager
 from src.providers import (
     BedrockClaudeProvider,
     BedrockLlamaProvider,
+    GeminiFlashProvider,
     OllamaDeepSeekProvider
 )
 from src.services import EvaluationService
@@ -60,6 +61,10 @@ class ApplicationOrchestrator:
         # AWS Bedrock Llama
         bedrock_llama = BedrockLlamaProvider(self.config.aws)
         providers.append(bedrock_llama)
+
+        # Gemini 2.5 Flash
+        gemini_provider = GeminiFlashProvider(self.config.google)
+        providers.append(gemini_provider)
         
         # Ollama DeepSeek
         ollama_provider = OllamaDeepSeekProvider(self.config.ollama)

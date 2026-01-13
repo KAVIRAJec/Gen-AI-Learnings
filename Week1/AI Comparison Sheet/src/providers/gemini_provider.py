@@ -122,4 +122,4 @@ class GeminiFlashProvider(BaseModelProvider):
     
     def get_model_name(self) -> str:
         """Get model display name."""
-        return "Gemini 2.0 Flash (Google API)"
+        return "Gemini 2.5 Flash (Google API)"
