@@ -1,0 +1,16 @@
+# Simple RAG Chatbot Dependencies
+
+# Core RAG components
+chromadb==0.5.23
+sentence-transformers==3.3.1
+
+# AWS Bedrock for Claude
+boto3==1.35.90
+botocore==1.35.90
+
+# Document processing
+PyPDF2==3.0.1
+python-docx==1.1.2
+
+# Configuration
+python-dotenv==1.0.1
