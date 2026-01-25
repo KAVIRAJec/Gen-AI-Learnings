@@ -1,0 +1,23 @@
+# Core LangChain and LangGraph dependencies
+langchain>=0.3.0
+langgraph>=0.2.0
+langchain-aws>=0.2.0
+langchain-core>=0.3.0
+
+# AWS Bedrock
+boto3>=1.34.0
+
+# RAG System dependencies
+chromadb==0.4.22
+sentence-transformers==2.2.2
+langchain-huggingface>=0.1.0
+langchain-chroma>=0.1.0
+
+# Web Search
+ddgs>=6.0.0
+
+# Document processing (for RAG)
+PyPDF2==3.0.0
+
+# Utilities
+python-dotenv==1.0.0
