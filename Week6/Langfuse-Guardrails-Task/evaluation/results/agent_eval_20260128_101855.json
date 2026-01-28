@@ -1,0 +1,63 @@
+{
+  "individual_results": [
+    {
+      "query": "What is artificial intelligence?",
+      "output": "Artificial Intelligence (AI) is a branch of computer science that focuses on creating computational systems capable of performing tasks that typically require human intelligence. These tasks include:\n\n1. Learning\n2. Reasoning\n3. Problem-solving\n4. Perception\n5. Decision-making\n6. Language understanding\n7. Data analysis\n\nAI enables machines to simulate human abilities and perform advanced tasks wit...",
+      "full_output": "Artificial Intelligence (AI) is a branch of computer science that focuses on creating computational systems capable of performing tasks that typically require human intelligence. These tasks include:\n\n1. Learning\n2. Reasoning\n3. Problem-solving\n4. Perception\n5. Decision-making\n6. Language understanding\n7. Data analysis\n\nAI enables machines to simulate human abilities and perform advanced tasks without explicit programming for each specific situation. It's a technology that empowers computers to learn from experience, adapt to new inputs, and perform human-like tasks. The goal of AI is to create systems that can process information and respond in ways that traditionally required human intelligence.\n\nThis technology has become increasingly important in modern society, with applications ranging from virtual assistants and recommendation systems to autonomous vehicles and advanced data analysis. AI systems can analyze large amounts of data, recognize patterns, and make decisions or provide suggestions based on this analysis, making it a powerful tool in various fields including business, healthcare, education, and scientific research.",
+      "latency_seconds": 22.34,
+      "tool_usage_success": true,
+      "correctness_score": 9,
+      "hallucination_rate_percent": 0.0,
+      "tools_used": [
+        "Web_Search"
+      ],
+      "expected_tool": "Web_Search",
+      "hallucination_score": 10,
+      "judge_reasoning": "The answer provides a comprehensive and accurate definition of AI, covering key aspects like learning, reasoning, and problem-solving. It explains both technical and practical aspects, including real-world applications. The explanation is well-structured and accessible. The information provided is standard, widely-accepted knowledge in the field of AI, without any speculative or unsupported claims. The only minor limitation is that it could have included more about different types of AI (narrow vs. general) and current limitations of AI systems.",
+      "success": true,
+      "timestamp": "2026-01-28T10:17:58.499613"
+    },
+    {
+      "query": "What is the company's vacation policy?",
+      "output": "The company's vacation policy includes several types of leave:\n\n1. Casual Leave:\n- 12 days per calendar year for existing employees\n- Pro-rated for new employees based on joining month\n\n2. Sick Leave:\n- 12 days per calendar year for existing employees\n- Pro-rated for new employees based on joining month\n\n3. Privilege Leave:\n- Available after 12 months of continuous service\n- 12 days per year, cred...",
+      "full_output": "The company's vacation policy includes several types of leave:\n\n1. Casual Leave:\n- 12 days per calendar year for existing employees\n- Pro-rated for new employees based on joining month\n\n2. Sick Leave:\n- 12 days per calendar year for existing employees\n- Pro-rated for new employees based on joining month\n\n3. Privilege Leave:\n- Available after 12 months of continuous service\n- 12 days per year, credited monthly (1 day per month)\n- Can be accumulated up to 45 days\n- Up to 15 days can be encashed upon leaving the company (based on Basic Pay)\n\nAdditional Leave Benefits:\n- Bereavement Leave: 3 days paid time off for death in immediate family\n- Compensatory Time Off: Available for extended weekday hours or weekend work\n- Sabbatical Leave: Available after 5 years of continuous service (unpaid)\n- Maternity/Paternity Leave: Available as per separate policy\n\nThe leave calendar runs from January to December, and different types of leave serve different purposes, providing employees with flexibility for various personal and professional needs.",
+      "latency_seconds": 22.03,
+      "tool_usage_success": true,
+      "correctness_score": 3,
+      "hallucination_rate_percent": 100.0,
+      "tools_used": [
+        "Document_Search"
+      ],
+      "expected_tool": "Document_Search",
+      "hallucination_score": 0,
+      "judge_reasoning": "The answer appears to be entirely fabricated. While it provides a detailed and plausible-sounding vacation policy, without access to the actual company documents or context about which company is being discussed, the agent has generated a complete policy structure with specific numbers and details. This is a clear case of hallucination - making up detailed information rather than acknowledging uncertainty or asking for clarification about which company's policy is being requested. The correct approach would have been to ask which company the user is inquiring about or indicate that specific company information is needed to provide accurate policy details.",
+      "success": true,
+      "timestamp": "2026-01-28T10:18:28.807721"
+    },
+    {
+      "query": "What are the company's core values and how many employees does it have?",
+      "output": "Presidio's core values are Excellence (delivering the best solutions and continuous improvement), One Presidio (emphasizing unity, diversity, and global collaboration), Forward-Thinking (focusing on innovation and staying ahead of the curve), and Accountability. The company has approximately 3,500 employees across 40+ global locations.",
+      "full_output": "Presidio's core values are Excellence (delivering the best solutions and continuous improvement), One Presidio (emphasizing unity, diversity, and global collaboration), Forward-Thinking (focusing on innovation and staying ahead of the curve), and Accountability. The company has approximately 3,500 employees across 40+ global locations.",
+      "latency_seconds": 19.28,
+      "tool_usage_success": true,
+      "correctness_score": 8,
+      "hallucination_rate_percent": 10.0,
+      "tools_used": [
+        "Document_Search"
+      ],
+      "expected_tool": "Document_Search",
+      "hallucination_score": 9,
+      "judge_reasoning": "The answer provides a clear and detailed breakdown of Presidio's core values (Excellence, One Presidio, Forward-Thinking, and Accountability) and includes the employee count of 3,500 across 40+ locations. The information appears well-structured and comprehensive. While the core values and employee numbers seem specific enough to be from a reliable source, without seeing the source document, I'm deducting small points from both scores to account for potential minor inaccuracies. The answer directly addresses both parts of the question and provides context for each value mentioned.",
+      "success": true,
+      "timestamp": "2026-01-28T10:18:54.820531"
+    }
+  ],
+  "aggregate_metrics": {
+    "total_tests": 3,
+    "avg_latency_seconds": 21.22,
+    "tool_usage_success_rate": 100.0,
+    "avg_correctness_score": 6.67,
+    "avg_hallucination_rate": 36.7,
+    "timestamp": "2026-01-28T10:18:55.825638"
+  }
+}
