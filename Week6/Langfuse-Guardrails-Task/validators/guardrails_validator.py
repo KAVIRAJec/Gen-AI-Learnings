@@ -12,7 +12,7 @@ class GuardrailsValidator:
             # Use Hub ToxicLanguage validator for both input and output
             # Lower threshold = more sensitive (0.0-1.0)
             self.toxic_validator = ToxicLanguage(
-                threshold=0.25,  # More sensitive threshold
+                threshold=0.25,
                 validation_method="sentence", 
                 on_fail="exception"
             )
@@ -80,8 +80,10 @@ class GuardrailsValidator:
             
             # Check toxic language using Hub validator
             try:
-                self.toxic_validator.validate(user_input, metadata={})
-                # If no exception, validation passed
+                validated_output = self.toxic_validator.validate(user_input, metadata={})
+                print(f"Validated Input: {validated_output}")
+                if validated_output.get("outcome") == "fail":
+                    return {"allowed": False, "message": f"I cannot process inappropriate content. {validated_output.get('error_message')}", "reason": "toxic_language"}
                 return {"allowed": True, "message": None, "reason": None}
             except Exception as toxic_error:
                 # Toxic language detected
@@ -106,8 +108,9 @@ class GuardrailsValidator:
         try:
             # Check toxic language in output using Hub validator
             try:
-                self.toxic_validator.validate(output, metadata={})
-                # If no exception, validation passed
+                validated_output = self.toxic_validator.validate(output, metadata={})
+                if validated_output.get("outcome") == "fail":
+                    raise ValueError("Toxic content detected in output")
                 return {
                     "allowed": True,
                     "modified_output": output,
