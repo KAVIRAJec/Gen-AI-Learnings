@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Crawler Agent</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Web Crawler Agent</h1>
+      <p class="subtitle">Powered by AWS Bedrock & Claude</p>
+
+      <div class="input-section">
+        <input
+          type="text"
+          id="urlInput"
+          placeholder="Enter URL to crawl (e.g., https://example.com)"
+          value="https://example.com"
+        />
+        <button id="crawlBtn" onclick="crawlUrl()">Crawl Website</button>
+      </div>
+
+      <div id="loading" class="loading" style="display: none">
+        <div class="spinner"></div>
+        <p>Crawling website...</p>
+      </div>
+
+      <div id="result" class="result" style="display: none">
+        <h2>Results</h2>
+        <div class="result-meta">
+        </div>
+        <div id="content" class="content"></div>
+      </div>
+
+      <div id="error" class="error" style="display: none"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
