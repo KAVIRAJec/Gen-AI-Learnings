@@ -41,6 +41,8 @@ Agent formulates final answer
 User receives answer
 ```
 
+## Demo
+![Multi-Tool Research Agent Demo](https://github.com/KAVIRAJec/Gen-AI-Learnings/blob/main/Week4/Demo/Langchain-Agent-Demo.mp4)
 ---
 
 ## 🛠️ Tools Breakdown

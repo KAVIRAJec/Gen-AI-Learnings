@@ -6,6 +6,9 @@ A production-ready research agent that combines intelligent tool usage with comp
 
 This project demonstrates a complete AI agent implementation featuring three critical production capabilities: observability through distributed tracing, safety through input/output validation, and reliability through systematic evaluation.
 
+## Demo
+![Research Agent Demo](https://github.com/KAVIRAJec/Gen-AI-Learnings/blob/main/Week6/Demo/Screen%20Recording%202026-01-28%20at%2010.13.15%20AM.mp4)
+
 ## Core Concepts
 
 ### 1. LangChain Agent Architecture

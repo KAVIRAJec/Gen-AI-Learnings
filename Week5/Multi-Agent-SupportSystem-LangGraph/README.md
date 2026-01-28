@@ -35,6 +35,10 @@ A multi-agent support system built with LangGraph and AWS Bedrock Claude 3.5 Son
     └─────────┘
 ```
 
+## Demo Video
+
+![Multi-Agent Support System Demo](https://github.com/KAVIRAJec/Gen-AI-Learnings/blob/main/Week5/Demo/Screen%20Recording%202026-01-25%20at%2011.24.17%20PM.mp4)
+
 ## 🎯 Features
 
 - **Intelligent Query Routing**: Supervisor Agent classifies queries and routes to appropriate specialist agents
