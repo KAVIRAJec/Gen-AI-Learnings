@@ -1,0 +1,100 @@
+flowchart TB
+    %% User Entry Point
+    User[User Interface<br/>Chatbot]
+    
+    %% Guardrails
+    User --> InputGR[Input Guardrails<br/>Safety & Validation]
+    InputGR --> Orchestrator
+    
+    %% Core Orchestration
+    Orchestrator[rchestrator Agent<br/>Intent Classification & Routing]
+    Orchestrator --> SessionStore
+    Orchestrator -.->|trace| LangFuse
+    Orchestrator -->|Complex Tasks| TaskPlanner[Task Planner<br/>Hierarchical Task Management]
+    TaskPlanner --> ConversationDB
+    TaskPlanner -.->|trace| LangFuse
+    
+    %% Domain Agents Layer
+    subgraph Agents["Domain-Specific Agents"]
+        direction LR
+        OrderAgent[Order Agent]
+        PaymentAgent[Payment Agent]
+        DeliveryAgent[Delivery Agent]
+        SupportAgent[Support Agent]
+        DiscoveryAgent[Discovery Agent]
+    end
+    
+    TaskPlanner --> Agents
+    
+    %% Knowledge & Data Layer
+    subgraph Knowledge["Knowledge & Data Sources"]
+        direction TB
+        VectorDB[(Vector DB)]
+        GraphDB[(Graph DB)]
+        CacheLayer[(Redis Cache)]
+        UserProfile[(User Profile)]
+        ConversationDB[(Conversation)]
+        SessionStore[(Session)]
+        PolicyDocs[(Policy Docs)]
+    end
+    
+    %% Integration Layer
+    subgraph Services["Integration Layer"]
+        direction TB
+        OrderService[(Order Service)]
+        PaymentService[(Payment Gateway)]
+        LogisticsService[(Logistics API)]
+        RestaurantAPI[(Restaurant DB)]
+        RiderTracking[(Rider Tracking)]
+    end
+    
+    %% Agent to Service Connections
+    OrderAgent -->|MCP| OrderService
+    OrderAgent -->|Tool| RestaurantAPI
+    OrderAgent --> CacheLayer
+    OrderAgent --> OfferEngine
+    
+    PaymentAgent -->|MCP| PaymentService
+    PaymentAgent -.->|trace| LangFuse
+    
+    DeliveryAgent -->|MCP| LogisticsService
+    DeliveryAgent -->|Tool| RiderTracking
+    DeliveryAgent -.->|metrics| Metrics
+    
+    SupportAgent --> RAGRetriever
+    SupportAgent -.->|logs| Logs
+    
+    DiscoveryAgent --> RAGRetriever
+    DiscoveryAgent --> VectorDB
+    DiscoveryAgent --> GraphDB
+    DiscoveryAgent --> UserProfile
+    
+    %% RAG & Personalization Components
+    RAGRetriever[RAG Retriever] --> VectorDB
+    RAGRetriever --> PolicyDocs
+    
+    OfferEngine[Offer Matching]
+    
+    %% Observability
+    subgraph Monitoring["Observability"]
+        direction LR
+        LangFuse[LangFuse]
+        Metrics[Metrics]
+        Logs[Logs]
+    end
+    
+    %% Response Flow
+    Agents --> ResponseAggregator[Response Aggregator]
+    ResponseAggregator --> OutputGR[Output Guardrails]
+    OutputGR --> User
+    
+    %% Styling
+    classDef agentStyle fill:#4ecdc4,stroke:#333,stroke-width:2px,color:#000
+    classDef dataStyle fill:#95e1d3,stroke:#333,stroke-width:2px,color:#000
+    classDef serviceStyle fill:#ffe66d,stroke:#333,stroke-width:2px,color:#000
+    classDef monitorStyle fill:#f38181,stroke:#333,stroke-width:2px,color:#000
+    
+    class Orchestrator,TaskPlanner,OrderAgent,PaymentAgent,DeliveryAgent,SupportAgent,DiscoveryAgent agentStyle
+    class VectorDB,GraphDB,CacheLayer,UserProfile,ConversationDB,SessionStore,PolicyDocs dataStyle
+    class OrderService,PaymentService,LogisticsService,RestaurantAPI,RiderTracking serviceStyle
+    class LangFuse,Metrics,Logs monitorStyle
